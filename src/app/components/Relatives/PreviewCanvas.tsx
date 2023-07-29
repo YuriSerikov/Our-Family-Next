@@ -20,8 +20,10 @@ const PreviewCanvas = (props: any) => {
   const [iconsRow, setIconsRow] = useState<IPersonCard[]>([])
   const [kidlessCoupleCoords, setKidlessCoupleCoords] = useState<IcouplesWithoutKids[]>([])
   const pageWidth = useRef(1200)
+  const pageHeight = useRef(600)
   const navigate = useRouter()
   const gridstepX = constRelTree.miniWidth + constRelTree.marginCard
+  const gridstepY = constRelTree.miniHeight + constRelTree.marginY
 
   const gotoPersonForm = (e: React.MouseEvent<HTMLImageElement>) => {
     e.preventDefault()
@@ -48,13 +50,17 @@ const PreviewCanvas = (props: any) => {
       setKidlessCoupleCoords(relatives.arrCouplesWithoutKids)
       if (relatives.arrIcons.length > 0) {
         let pozXmax = 0
+        let pozYmax = 0
         for (let i = 0; i < relatives.arrIcons.length; i++) {
           if (relatives.arrIcons[i].pozX + gridstepX > pozXmax) {
             pozXmax = relatives.arrIcons[i].pozX + gridstepX
           }
+          if (relatives.arrIcons[i].pozY + gridstepY > pozYmax) {
+            pozYmax = relatives.arrIcons[i].pozY + gridstepY
+          }
         }
         pageWidth.current = pozXmax
-        
+        pageHeight.current= pozYmax
       }
     }
 
@@ -69,10 +75,9 @@ const PreviewCanvas = (props: any) => {
     createRelArr()
   }, [createRelArr])
 
-  //let pageWidth = constRelTree.canvasWidth;
   //let pageWidth = document.documentElement.scrollWidth;
   //let pageHeight = document.documentElement.scrollHeight
-  let pageHeight = document.documentElement.scrollHeight
+  
 
   const DrawTree = useCallback(
     (ctx: CanvasRenderingContext2D) => {
@@ -159,7 +164,7 @@ const PreviewCanvas = (props: any) => {
           {' '}
         </>
       ) : (
-        <CanvasRelativesTree DrawLines={DrawTree} width={pageWidth.current} height={pageHeight} />
+        <CanvasRelativesTree DrawLines={DrawTree} width={pageWidth.current} height={pageHeight.current} />
       )}
       <div id="minicard_container">
         {iconsRow.map((iconRow, index) => (

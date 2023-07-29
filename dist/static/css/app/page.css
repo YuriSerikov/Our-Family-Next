@@ -1,0 +1,67 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/page.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+
+.page_main__GlU4n {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+  padding: 1rem;
+  min-height: 100vh;
+}
+.page_grid__f5Kdy {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+}
+
+.page_about_family__eh8fv {
+  padding: 5px 10px;
+  width: 60%;
+  max-height: 300px;
+  background-color: beige;
+  border: 2px solid blue;
+  margin: 30px 30px;
+  border-radius: 7px;
+  overflow-y: scroll;
+  font-family: 'Roboto-Regular';
+}
+/* Mobile */
+@media (max-width: 700px) {
+  
+  .page_grid__f5Kdy {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .page_about_family__eh8fv {
+    padding: 5px 10px;
+    width: 450px;
+    max-height: 300px;
+    margin: 10px 30px;
+    overflow-y: scroll;
+  }
+
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .page_grid__f5Kdy {
+    grid-template-columns: repeat(2, 50%);
+  }
+  .page_about_family__eh8fv {
+    padding: 5px 10px;
+    width: 450px;
+    max-height: 300px;
+    margin: 10px 30px;
+    overflow-y: scroll;
+  }
+}
+
+
+
+

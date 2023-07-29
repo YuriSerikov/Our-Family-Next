@@ -45,9 +45,9 @@ export default function PersonIdPage({params:{personId}}: Props) {
   const [choosenPersonGender, setChoosenPersonGender] = useState("");
   
   const router = useRouter()
-  const param = useSearchParams()
+  //const param = useSearchParams()
   
-  const finalPixWidth = 256;
+  //const finalPixWidth = 256;
   const strDateBirth = " Дата рождения: ";
   const strDateDeath = " Дата   смерти: ";
   const fullname = decodeURI(personId);

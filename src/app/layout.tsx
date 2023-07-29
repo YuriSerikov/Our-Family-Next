@@ -9,7 +9,6 @@ import { PersonProvider } from './context/PersonContext'
 import { PersonsListProvider } from './context/PersonsListContext'
 import AuthContext from "./context/AuthContext";
 import type { Metadata } from 'next'
-//import { Providers } from './components/Providers/Providers'
 import {useAuth} from "./Hooks/auth.hook";
 
 
