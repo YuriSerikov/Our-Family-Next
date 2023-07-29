@@ -1,0 +1,319 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/components/PreviewArea/PreviewArea.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+.PreviewArea_previewremove__mIYC6 {
+  display: none;
+  visibility: hidden;
+  opacity: 0%;
+}
+
+.PreviewArea_previewImage__EDcFp:hover {
+  opacity: 1;
+}
+.PreviewArea_previewInfo__Z48AK {
+  position: absolute;
+  right: 0;
+  bottom: -24px;
+  left: 0;
+  height: 25px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  /* display: block; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5px;
+  transition: bottom 0.22s;
+  color: rgb(37, 23, 50);
+}
+.PreviewArea_previewImage__EDcFp:hover .PreviewArea_previewInfo__Z48AK {
+  bottom: 8px;
+}
+.PreviewArea_card__UPPug {
+  position: relative;
+  width: 170px;
+  background-color: white;
+  padding: 1px;
+  align-content: center;
+}
+.PreviewArea_preview__l2A_n {
+  padding: 5px;
+}
+.PreviewArea_previewImage__EDcFp {
+  position: relative;
+  width: 152px;
+  height: auto;
+  border: 1px dashed #666;
+  align-items: center;
+  overflow: hidden;
+  margin: 3px;
+}
+.PreviewArea_previewImageImg__XqZJI {
+  width: 150px;
+  height: auto;
+}
+
+@media screen and (min-width: 960px) {
+  .PreviewArea_card__UPPug {
+    position: relative;
+    display: flex;
+    width: 200px;
+    border-radius: 6px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  .PreviewArea_preview__l2A_n {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+  .PreviewArea_previewImage__EDcFp {
+    position: relative;
+    width: 182px;
+    height: auto;
+    margin: 0 5px 5px 5px;
+  }
+  .PreviewArea_previewImageImg__XqZJI {
+    width: 180px;
+  }
+
+  .PreviewArea_previewremove__mIYC6 {
+    display: block;
+    visibility: visible;
+    opacity: 100%;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.22s;
+    z-index: 100;
+  }
+  .PreviewArea_minibtn_remove__7KhP3 {
+    margin: 2px 16px 0 2px;
+  }
+  /* .minibtn_rename {
+    margin: 2px 4px 0 2px;
+  }*/
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/UI/checkbox/AppCheckBox.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.AppCheckBox_appChbx__i2UrG {
+  margin: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.AppCheckBox_appLabel__yeHuZ {
+  color: black;
+  display: block;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./src/app/UI/miniButtons/smallBtns.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.smllbtn {
+  display: none;
+}
+.smllbtn_Goto {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  border: none;
+  background-color: transparent;
+  color: teal;
+}
+
+@media screen and (min-width: 960px) {
+  .smllbtn,
+  .smllbtn_Goto {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    border: none;
+    background-color: transparent;
+    color: teal;
+  }
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/components/NearRelative/NearRelative.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+.NearRelative_kinblock___rxlg {
+  width: calc(100vw - 10px);
+  max-width: 700px;
+  background-color: wheat;
+}
+.NearRelative_lblplace__RlvIm {
+  max-width: 120px;
+  width: 30vw;
+}
+.NearRelative_lbl__tuC3A {
+  margin: 0 5px;
+  color: teal;
+  font-size: small;
+  font-weight: bold;
+}
+.NearRelative_strNextKin__wVLTE {
+  max-width: 404px;
+  width: 90vw;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px dotted teal;
+  font-size: medium;
+  font-family: 'Roboto-Regular', Times, serif;
+}
+.NearRelative_btnplace__OlBP6 {
+  width: 20px;
+  padding: 0;
+}
+@media screen and (min-width: 960px) {
+  .NearRelative_kinblock___rxlg {
+    width: 700px;
+    display: inline-block;
+  }
+  .NearRelative_lblplace__RlvIm {
+    width: 110px;
+    float: left;
+  }
+
+  .NearRelative_lbl__tuC3A {
+    margin: 0 20px;
+    color: teal;
+    font-size: small;
+    font-weight: bold;
+  }
+
+  .NearRelative_strNextKin__wVLTE {
+    width: 404px;
+    display: inline-block;
+    font-size: large;
+  }
+  .NearRelative_btnplace__OlBP6 {
+    width: 64px;
+    padding: 0;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/personInfo/[personId]/PersonIdPage.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/* @import '../scss/fonts.scss'; */
+
+.PersonIdPage_personForm__Y5xs8 {
+  width: vw100;
+}
+.PersonIdPage_personSelector__6FlM_ {
+  display: none;
+}
+.PersonIdPage_rltSubHeader__JdL2t {
+  margin-left: 120px;
+}
+
+.PersonIdPage_profession__6_uSe,
+.PersonIdPage_profile___t7o7,
+.PersonIdPage_rltcontent__B_dum,
+.PersonIdPage_birthplace__Vhp_d {
+  border: 2px solid teal;
+}
+.PersonIdPage_profession__6_uSe,
+.PersonIdPage_profile___t7o7 {
+  margin-left: 5px;
+  width: calc(100vw - 10px);
+  padding: 10px;
+}
+.PersonIdPage_birthplace__Vhp_d {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  width: calc(100vw - 10px);
+  padding-left: 10px;
+}
+
+.PersonIdPage_placeImg__eDgpW {
+  width: 170px;
+  height: 170px;
+  margin: 10px auto;
+  background-size: cover;
+  overflow: hidden;
+  border: 1px solid teal;
+}
+.PersonIdPage_dateIn__d5QZq {
+  margin-left: 5px;
+  padding-left: 5px;
+  text-align: center;
+  width: 140px;
+}
+
+.PersonIdPage_label_datein__5nVnW {
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 960px) {
+  
+  .PersonIdPage_psn_longname__Uamye {
+    width: 800px;
+  }
+  .PersonIdPage_placeImg__eDgpW {
+    width: 200px;
+    height: 230px;
+    float: left;
+    margin: 0 10px 10px 10px;
+  }
+  .PersonIdPage_birthplace__Vhp_d {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    border-color: teal;
+    width: 600px;
+  }
+  .PersonIdPage_profession__6_uSe {
+    width: 600px;
+    height: 55px;
+    padding: 3px 10px;
+    overflow: hidden;
+  }
+  .PersonIdPage_profile___t7o7 {
+    width: 600px;
+    height: 105px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .PersonIdPage_buttonarea__qaNwH {
+    margin-left: 20px;
+    width: 800px;
+  }
+
+  .PersonIdPage_appBtn__dTue0 {
+    display: inline-block;
+  }
+  .PersonIdPage_rltcontent__B_dum {
+    width: 800px;
+    height: auto;
+    margin: 0 20px;
+  }
+
+  .PersonIdPage_personSelector__6FlM_ {
+    /* display: none; */
+    position: absolute;
+    top: 100px;
+    right: 5px;
+    width: 350px;
+  }
+  .PersonIdPage_minicard__2za6W {
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+  }
+  .PersonIdPage_label_datein__5nVnW {
+    margin-left: 5px;
+  }
+  .PersonIdPage_appBtnGoBack___8muF {
+    margin-left: 50px;
+  }
+}
+

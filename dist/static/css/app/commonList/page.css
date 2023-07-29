@@ -1,0 +1,176 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./src/app/UI/miniButtons/smallBtns.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.smllbtn {
+  display: none;
+}
+.smllbtn_Goto {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  border: none;
+  background-color: transparent;
+  color: teal;
+}
+
+@media screen and (min-width: 960px) {
+  .smllbtn,
+  .smllbtn_Goto {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    border: none;
+    background-color: transparent;
+    color: teal;
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[12].use[3]!./src/app/components/PersonList/personItem.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+/* @import '../../scss/fonts.scss'; */
+
+.psnBlock {
+  height: 53px;
+}
+
+.woman,
+.man {
+  margin: 2px 5px;
+  border: 1px solid teal;
+  justify-content: space-between;
+  width: calc(100vw -10px);
+}
+.man {
+  background-color: rgb(207, 217, 235);
+}
+.woman {
+  background-color: rgb(245, 210, 215);
+}
+
+.psnPhoto {
+  position: relative;
+  display: inline-block;
+  width: 41px;
+  border: 1px solid whitesmoke;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+.psnPhoto:hover {
+  border: 1px solid blueviolet;
+  cursor: pointer;
+}
+.persondata {
+  display: inline-block;
+  max-width: 400px;
+  width: calc(90vw - 70px);
+  vertical-align: initial;
+  margin-left: 5px;
+  font-family: 'Roboto-Regular';
+  font-size: small;
+}
+img {
+  vertical-align:initial;
+}
+.psnBtnGoto {
+  display: inline-block;
+}
+
+@media screen and (min-width: 960px) {
+  .man,
+  .woman {
+    width: 950px;
+    height: 53px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .persondata {
+    max-width: 850px;
+    width: 850px;
+    height: 53px;
+    margin-left: 10px;
+    font-size: medium;
+  }
+  img {
+    vertical-align: initial;
+  }
+
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/components/PersonList/personList.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/* @import '../../scss/fonts.scss'; */
+
+.personList_areaHeaderAnaList__T7ODh{
+  background-color: wheat;
+}
+
+.personList_header4__LjSap {
+  margin-left: 10px;
+  text-align: 'center';
+  align-content: center;
+  font-family: 'OpenSans-Bold';
+  font-weight: 700;
+  font-size: small;
+  color: teal;
+  background-color: wheat;
+}
+.personList_areaPsnList__VIwBm {
+    display: flex;
+    background-color: wheat;
+    overflow-y: scroll;
+  }
+
+@media screen and (min-width: 960px) {
+  .personList_header4__LjSap {
+    margin-left: 10%;
+    font-size: large;
+  }
+  
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/UI/psnFilter/AppInput.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.AppInput_appInput__w4_7f {
+  width: calc(100vw - 10px);
+  padding: 3px 15px;
+  margin: 5px;
+  border: 2px solid teal;
+}
+
+@media screen and (min-width: 960px) {
+  .AppInput_appInput__w4_7f {
+    width: 600px;
+    padding: 3px 15px;
+    margin: 5px 0px;
+    border: 2px solid teal;
+  }
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./src/app/commonList/common.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+
+.common_areaSelect__0akAv {
+  background-color: wheat;
+}
+.common_content__t94_d {
+  width: 100%;
+  min-height: 80%;
+  background-color: wheat;
+}
+.common_personsLoading___5CKs {
+  display: flex;
+  justify-content: center;
+}
+
+.common_btnUpload__Sik2K {
+  margin-left: 80px;
+  float: left;
+}
+
