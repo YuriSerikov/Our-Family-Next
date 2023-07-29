@@ -1,0 +1,183 @@
+@import '../scss/fonts.scss';
+
+.about {
+  display: block;
+  background-color: wheat;
+}
+.pagetitle {
+  margin: 0 0 0 20px;
+}
+.btnArea {
+  display: flex;
+  height: 20%;
+  justify-content: center;
+}
+.cardform {
+  display: block;
+  /* float: left; */
+  max-width: 450px;
+  width: calc(100vw -40px);
+  height: auto;
+  margin: 20px 20px;
+  background-color: rgb(109, 109, 213);
+  border-radius: 10px;
+}
+
+.cardcontent {
+  color: white;
+}
+.cardtitle {
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.inputfield {
+  margin: 10px 30px;
+}
+.registrationinput {
+  width: calc(70vw - 20px);
+  max-width: 280px;
+  margin: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #fff !important;
+  box-shadow: 0 1px 0 0 #fff !important;
+  color: black !important;
+}
+input.registrationinput:focus {
+  border-bottom: 1px solid #ffeb3b !important;
+  box-shadow: 0 1px 0 0 #ffeb3b !important;
+}
+.registrationlable {
+  width: 60px;
+  color: #ffffff !important;
+}
+.registrationlable:focus {
+  color: #ffeb3b !important;
+}
+.btnyellow,
+.btngrey {
+  display: block;
+  width: 120px;
+  height: 30px;
+  margin: 10px 30px;
+  color: yellow;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'RobotoCondensed-Regular';
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+.btnyellow {
+  background-color: rgb(228, 107, 9);
+}
+.btngrey {
+  background-color: darkslategrey;
+}
+
+.btnyellow:hover,
+.btngrey:hover {
+  border-color: brown;
+  cursor: pointer;
+}
+.row2 {
+  display: block;
+  flex-wrap: 450px;
+}
+.about_family {
+  margin: 20px;
+  padding: 5px 10px;
+  width: 90%;
+  max-height: 300px;
+  background-color: beige;
+  border: 2px solid blue;
+  margin: 10px 30px;
+  border-radius: 7px;
+  overflow-y: scroll;
+  font-family: 'Roboto-Regular';
+}
+
+.overflow {
+  min-height: 250px;
+}
+.about_family::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f9f9fd;
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+}
+.about_family::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #18aaaa;
+}
+
+.about_family::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #f9f9fd;
+}
+
+@media screen and (min-width: 960px) {
+  .pagetitle {
+    margin: 0 0 0 90px;
+  }
+  .btnArea {
+    display: flex;
+    height: 20%;
+    justify-content: center;
+  }
+  .cardform {
+    display: inline;
+    float: left;
+    width: 450px;
+    margin: 20px 30px;
+  }
+
+  .cardtitle {
+    display: flex;
+    align-items: center;
+    margin-left: 130px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .inputfield {
+    margin: 10px 30px;
+  }
+  .registrationinput {
+    width: 280px;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .registrationlable {
+    width: 60px;
+  }
+
+  .btnyellow {
+    display: block;
+    width: 120px;
+    height: 30px;
+    margin: 10px 30px;
+  }
+  .btngrey {
+    display: block;
+    width: 120px;
+    height: 30px;
+  }
+
+  .row2 {
+    display: flex;
+    flex-wrap: 450px;
+  }
+  .about_family {
+    margin: 20px;
+    padding: 5px 10px;
+    width: 450px;
+    max-height: 300px;
+    margin: 10px 30px;
+    overflow-y: scroll;
+  }
+}

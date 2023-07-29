@@ -1,0 +1,122 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+/*@import '../scss/fonts.scss'; */
+
+.album_container {
+  background-color: wheat;
+}
+.album_header {
+  margin-left: 50px;
+  margin-bottom: 0;
+  font-size: large;
+  font-weight: bold;
+}
+.person_selector {
+  display: inline;
+  margin-left: 5px;
+}
+
+.minibtn_choice {
+  display: none;
+}
+.containerimages {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    padding-top: 5rem;
+    width: calc(100vw-30px);
+    height: calc(100vh - 140px);
+    margin: 0 10px;
+  }
+
+
+@media screen and (min-width: 960px) {
+  .album_area {
+    border: 2px solid teal;
+    width: calc(100vw-30px);
+  }
+  .containerimages {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    padding-top: 5px;
+    width: calc(100vw-70px);
+    height: calc(100vh - 220px);
+    margin: 2px 10px;
+    border: 2px solid teal;
+    overflow:scroll;
+    scroll-behavior:smooth;
+  }
+
+  .person_selector {
+    display: block;
+    margin-left: 5px;
+    width: 50%;
+  }
+  .mini_photo {
+    position: relative;
+    float:left;
+    margin: 2px;
+    height: 104px;
+    width:auto;
+    border: 2px solid white;
+  }
+  .minibtn_choice{
+    margin: 2px 16px 0 2px;
+    position: absolute;
+  }
+
+  .album_btn_area {
+    display: flex;
+    justify-content: center;
+    background-color: wheat;
+    margin: 0 10px;
+  }
+  .btn_action_mob{
+    margin: 5px 10px;
+  }
+
+  .btnload {
+    width: 81px;
+    font-size: small;
+    color: #42b983;
+    background: #fff;
+    position: relative;
+    border-radius: 90px;
+    border: 1px solid #42b389;
+    text-decoration: none;
+    padding: 5px 10px;
+    outline: none;
+    transition: all 0.22s;
+    margin: 0 5px 0 10px;
+  }
+  .btnload:hover,
+  .btnprimary:hover {
+    border: 1px solid darkmagenta;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .btnload:active {
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .btnprimary {
+    display: inline;
+    width: 93px;
+    font-size: small;
+    color: white;
+    background: #42b983;
+    position: relative;
+    border-radius: 90px;
+    border: 1px solid #42b389;
+    text-decoration: none;
+    padding: 5px 10px;
+    outline: none;
+    transition: all 0.22s;
+    margin: 0 5px 0 0;
+  }
+
+  .btnprimary:active {
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+}

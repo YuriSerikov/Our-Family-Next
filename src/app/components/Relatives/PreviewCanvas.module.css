@@ -1,0 +1,11 @@
+.icon_place {
+  position: absolute;
+  width: 122px;
+  height: 60px;
+  background-color: transparent;
+  z-index: 500;
+}
+.icon_place:hover {
+  border: solid 3px blueviolet;
+  border-radius: 10px;
+}

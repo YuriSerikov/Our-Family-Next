@@ -1,0 +1,28 @@
+.rlt_table {
+  width: 95%;
+  margin: 0 15px 10px 15px;
+}
+.first_row {
+  text-align: center;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+}
+.connection {
+  border: 2px dotted black;
+}
+.closerel {
+  font-weight: 700;
+  background-color: beige;
+  color: black;
+}
+.closerel_head {
+  border: 1ps solid grey;
+  color: gray;
+  background-color: beige;
+}
+.person {
+  font-weight: 700;
+  color: black;
+  text-align: center;
+}

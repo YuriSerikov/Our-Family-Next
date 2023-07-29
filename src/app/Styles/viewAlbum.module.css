@@ -1,0 +1,142 @@
+@import '../scss/fonts.scss';
+
+
+.album_header {
+  margin-left: 30px;
+  font-family: 'RobotoCondensed-Regular', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+  font-weight: 700;
+  color: teal;
+}
+.personSelector {
+  height: 50px;
+}
+
+.psn_selector {
+  display: inline-block;
+  position: relative;
+  visibility: visible;
+  margin: 5px 10px;
+  width: 70vw;
+  height: 35px;
+}
+.swich_btn {
+  display: inline-block;
+  position: relative;
+  height: 35px;
+  margin-left: 0 0 0 10px;
+  background-color: wheat;
+  text-align: center;
+}
+.btn_action_switch {
+  display: block;
+  margin-top: 0;
+}
+.btn_action_mob {
+  display: inline-block;
+  margin-top: 10px;
+}
+.btn_action {
+  display: none;
+  visibility: hidden;
+}
+.album_container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 110px);
+  border: 2px solid black;
+  background-color: wheat;
+}
+.album_area {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 160px);
+  background-color: wheat;
+}
+
+.album_view_area {
+  position: relative;
+  display: flex;
+  margin: 2px;
+  height: calc(100vh - 215px);
+  border: 2px solid grey;
+  background-color: wheat;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+.album_btn_area {
+  position: relative;
+  height: 45px;
+  margin: 2px;
+  border: 2px solid grey;
+  background-color: wheat;
+  text-align: center;
+}
+
+.mini_photo {
+  position: relative;
+  float: left;
+  max-height: 100px;
+  height: calc(15vh);
+  border: 1px solid white;
+  opacity: 1;
+}
+
+.mini_photo:hover {
+  border: 1px solid rgb(70, 26, 213);
+  background-color: rgb(255, 255, 255, 0.9);
+}
+
+.minibtn_choice {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .album_header {
+    margin-left: 30px;
+    font-family: 'RobotoCondensed-Regular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .album_container {
+    height: 590px;
+  }
+
+  .album_area {
+    position: relative;
+    float: left;
+    right: 0;
+    width: 100%;
+    height: 500px;
+    display: block;
+    margin: 0;
+  }
+  .album_view_area {
+    position: relative;
+    display: flex;
+    height: 473px;
+    margin: 2px;
+    overflow-y: scroll;
+    white-space: nowrap;
+  }
+  .mini_photo {
+    height: 100px;
+  }
+  .adminBtns {
+    display: inline-block;
+  }
+
+  .btn_action,
+  .btn_action_mob {
+    display: inline-block;
+    visibility: visible;
+    margin-top: 5px;
+  }
+}

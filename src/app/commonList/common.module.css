@@ -1,0 +1,18 @@
+
+.areaSelect {
+  background-color: wheat;
+}
+.content {
+  width: 100%;
+  min-height: 80%;
+  background-color: wheat;
+}
+.personsLoading {
+  display: flex;
+  justify-content: center;
+}
+
+.btnUpload {
+  margin-left: 80px;
+  float: left;
+}

@@ -1,0 +1,25 @@
+.smllbtn {
+  display: none;
+}
+.smllbtn_Goto {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  border: none;
+  background-color: transparent;
+  color: teal;
+}
+
+@media screen and (min-width: 960px) {
+  .smllbtn,
+  .smllbtn_Goto {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    border: none;
+    background-color: transparent;
+    color: teal;
+  }
+}

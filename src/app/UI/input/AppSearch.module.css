@@ -1,0 +1,19 @@
+@import '../../scss/fonts.scss';
+
+.appInput {
+  width: calc(100vw - 10px);
+  max-width: 250px;
+  padding: 3px 15px;
+  margin: 10px;
+  border: 2px solid teal;
+  font-family: 'Roboto-Regular';
+  font-size: small;
+  height: auto;
+}
+
+@media screen and (min-width: 960px) {
+  .appInput {
+    width: 250px;
+    font-size: medium;
+  }
+}

@@ -1,0 +1,9 @@
+.appChbx {
+  margin: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.appLabel {
+  color: black;
+  display: block;
+}

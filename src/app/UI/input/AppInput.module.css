@@ -1,0 +1,15 @@
+.appInput {
+  width: calc(100vw - 10px);
+  padding: 3px 15px;
+  margin: 5px;
+  border: 2px solid teal;
+}
+
+@media screen and (min-width: 960px) {
+  .appInput {
+    width: 600px;
+    padding: 3px 15px;
+    margin: 5px 0px;
+    border: 2px solid teal;
+  }
+}

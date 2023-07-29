@@ -1,0 +1,29 @@
+/* @import '../../scss/fonts.scss'; */
+
+.areaHeaderAnaList{
+  background-color: wheat;
+}
+
+.header4 {
+  margin-left: 10px;
+  text-align: 'center';
+  align-content: center;
+  font-family: 'OpenSans-Bold';
+  font-weight: 700;
+  font-size: small;
+  color: teal;
+  background-color: wheat;
+}
+.areaPsnList {
+    display: flex;
+    background-color: wheat;
+    overflow-y: scroll;
+  }
+
+@media screen and (min-width: 960px) {
+  .header4 {
+    margin-left: 10%;
+    font-size: large;
+  }
+  
+}

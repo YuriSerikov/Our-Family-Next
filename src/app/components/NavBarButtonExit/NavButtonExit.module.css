@@ -1,0 +1,26 @@
+
+.btnLogout {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .btnLogout {
+    display: block;
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    background-color: limegreen;
+    text-decoration: none;
+  }
+  .btnLogout:hover {
+    padding: 6px 18px;
+    transition: all 0.3s ease-out;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid blue;
+  }
+}

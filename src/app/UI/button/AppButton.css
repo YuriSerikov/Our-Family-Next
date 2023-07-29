@@ -1,0 +1,68 @@
+.appBtn,
+.appBtnDelete {
+  display: none;
+  visibility: hidden;
+}
+.appBtnclose,
+.appBtnReload {
+  margin: 5px 5px;
+  padding: 5px 10px;
+  color: wheat;
+  position: relative;
+  border-radius: 90px;
+  font-size: 14px;
+  background-color: rgb(165, 14, 39);
+  text-decoration: none;
+  font-weight: 700;
+  outline: none;
+  border: 3px solid teal;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 960px) {
+  .appBtn {
+    margin: 5px 5px;
+    padding: 5px 10px;
+    color: teal;
+    position: relative;
+    border-radius: 90px;
+    font-size: 14px;
+    background-color: wheat;
+    text-decoration: none;
+    font-weight: 700;
+    outline: none;
+    border: 3px solid teal;
+    cursor: pointer;
+  }
+
+  .appBtn,
+  .appBtnDelete {
+    display: inline-block;
+    visibility: visible;
+  }
+
+  .appBtn:active,
+  .appBtn:hover {
+    border: 3px solid darkmagenta;
+  }
+  .appBtn:disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+
+  .appBtnclose,
+  .appBtnDelete {
+    margin: 5px 5px;
+    padding: 5px 10px;
+    color: wheat;
+    position: relative;
+    border-radius: 90px;
+    font-size: 14px;
+    background-color: rgb(165, 14, 39);
+    text-decoration: none;
+    font-weight: 700;
+    outline: none;
+    border: 3px solid teal;
+    cursor: pointer;
+  }
+}

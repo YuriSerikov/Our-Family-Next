@@ -1,0 +1,136 @@
+@import '../scss/fonts.scss';
+
+body {
+  background-color: wheat;
+}
+.tree_header {
+  margin-left: 30px;
+  font-family: 'RobotoCondensed-Regular', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+  font-weight: 700;
+  color: teal;
+}
+.personSelector {
+  height: 50px;
+}
+.psn_selector {
+  display: inline-block;
+  position: relative;
+  visibility: visible;
+  margin: 5px 10px;
+  width: 70vw;
+  height: 35px;
+  z-index: 800;
+  font-size: small;
+  line-height: normal;
+}
+
+.tree_container {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  border: 2px solid black;
+  background-color: wheat;
+}
+
+.tree_area {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 160px);
+  border: 2px solid grey;
+  background-color: wheat;
+  touch-action: manipulation;
+}
+.tree_view_area {
+  position: relative;
+  display: flex;
+  margin: 2px;
+  height: calc(100vh - 215px);
+  border: 2px solid grey;
+  background-color: wheat;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+.tree_btn_area {
+  position: relative;
+  height: 45px;
+  margin: 2px;
+  border: 2px solid grey;
+  background-color: wheat;
+  text-align: center;
+}
+.btn_action_mob {
+  display: inline-block;
+  margin-top: 5px;
+}
+.btn_action {
+  display: none;
+  visibility: hidden;
+}
+
+.modal_80w {
+  width: 800px;
+}
+
+.modalErrBD {
+  background-color: burlywood;
+}
+.modalBigTree {
+  background-color: lightgoldenrodyellow;
+  touch-action: manipulation;
+}
+.modalTreeHeader {
+  background-color: lightgoldenrodyellow;
+}
+.modalTreeTitle {
+  font-size: 24px;
+  font-weight: 900;
+  background-color: lightgoldenrodyellow;
+}
+
+@media screen and (min-width: 960px) {
+  .tree_header {
+    margin-left: 30px;
+    font-family: 'RobotoCondensed-Regular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .tree_container {
+    height: 590px;
+  }
+  .tree_area {
+    position: relative;
+    float: left;
+    right: 0;
+    width: 100%;
+    height: 532px;
+    display: block;
+    margin: 0;
+  }
+  .tree_view_area {
+    position: relative;
+    display: flex;
+    height: 473px;
+    margin: 2px;
+    border: 2px solid grey;
+    background-color: wheat;
+    overflow-y: auto;
+    white-space: nowrap;
+  }
+  .adminBtns {
+    display: inline-block;
+  }
+  .btn_action,
+  .btn_action_mob {
+    display: inline-block;
+    visibility: visible;
+    margin-top: 5px;
+  }
+  .modalTreeTitle {
+    font-size: 16px;
+  }
+}

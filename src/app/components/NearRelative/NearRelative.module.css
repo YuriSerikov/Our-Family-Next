@@ -1,0 +1,55 @@
+.kinblock {
+  width: calc(100vw - 10px);
+  max-width: 700px;
+  background-color: wheat;
+}
+.lblplace {
+  max-width: 120px;
+  width: 30vw;
+}
+.lbl {
+  margin: 0 5px;
+  color: teal;
+  font-size: small;
+  font-weight: bold;
+}
+.strNextKin {
+  max-width: 404px;
+  width: 90vw;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px dotted teal;
+  font-size: medium;
+  font-family: 'Roboto-Regular', Times, serif;
+}
+.btnplace {
+  width: 20px;
+  padding: 0;
+}
+@media screen and (min-width: 960px) {
+  .kinblock {
+    width: 700px;
+    display: inline-block;
+  }
+  .lblplace {
+    width: 110px;
+    float: left;
+  }
+
+  .lbl {
+    margin: 0 20px;
+    color: teal;
+    font-size: small;
+    font-weight: bold;
+  }
+
+  .strNextKin {
+    width: 404px;
+    display: inline-block;
+    font-size: large;
+  }
+  .btnplace {
+    width: 64px;
+    padding: 0;
+  }
+}

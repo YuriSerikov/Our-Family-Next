@@ -1,0 +1,10 @@
+.text_area {
+  width: 600px;
+  height: 500px;
+  margin-left: 60px;
+  padding: 15px;
+  border: 2px solid grey;
+  background-color: bisque;
+  overflow-y: scroll;
+  overflow-wrap: initial;
+}
