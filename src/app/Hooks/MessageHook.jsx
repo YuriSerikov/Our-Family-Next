@@ -23,7 +23,7 @@ const MessageHook = ({ children, ...props }) => {
           bg={variant}
           show={showM}
           onClose={() => setShowM(false)}
-          delay={3000}
+          delay={5000}
           autohide
         >
           <Toast.Header closeButton={true}>

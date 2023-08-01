@@ -1,7 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/commonList/page": "app/commonList/page.js",
-  "/login/page": "app/login/page.js",
-  "/familyTree/page": "app/familyTree/page.js",
-  "/personInfo/[personId]/page": "app/personInfo/[personId]/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/login/page": "app/login/page.js"
 }

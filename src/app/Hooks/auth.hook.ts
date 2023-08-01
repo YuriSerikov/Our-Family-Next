@@ -54,4 +54,3 @@ export const useAuth = () => {
   return { login, logout, token, userId, isAdmin }
 }
 
-//export default useAuth

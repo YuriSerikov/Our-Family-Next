@@ -6,12 +6,13 @@ import { useRouter } from 'next/navigation'
 import imgManAvatar from "../../../images/ico_man40x40.png";
 import imgWomanAvatar from "../../../images/icoWoman40x40.png";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import useTip from '../../Hooks/useTip';
-import { PersonContext } from '../../context/PersonContext';
-import ConvertDateRu from '../../Utilites/ConvertDateRu';
+import useTip from '@/app/Hooks/useTip';
+import { PersonContext } from '@/app/context/PersonContext';
+import ConvertDateRu from '@/app/Utilites/ConvertDateRu';
 import  SmallBtnAction  from '@/app/UI/miniButtons/SmallBtnAction';
 import bootstrapPersonUp from '@/images/bootstrap/person-up.svg'
 import "./personItem.css";
+//import PersonData from '../PersonData/PersonData';
 
 const PersonItem = ({ ...props }) => {
   
@@ -20,8 +21,8 @@ const PersonItem = ({ ...props }) => {
   const router = useRouter()
 
   const gotoPersonData = () => {
-   router.push(`/personInfo/${props.person.longname}`)
-
+   //router.push(`/personInfo/${props.person.longname}`)
+   router.push('/personInfo')
   };
   
   let strDates: string = ConvertDateRu(person.lastday)

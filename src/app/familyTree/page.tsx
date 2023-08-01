@@ -57,10 +57,6 @@ export default function FamilyTree() {
     getPersonById(activePerson, passPersonData);
   }, [activePerson]);
 
-  /* const buildTheTree = () => {
-    setShowModalTree(true);
-  }; */
-
   const PassSelectedPerson = (selectedOption: IPsnSelectList) => {
     setActivePerson(selectedOption.label);
   };

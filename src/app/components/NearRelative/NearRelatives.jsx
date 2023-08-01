@@ -6,49 +6,25 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import SmallBtnAction from '@/app/UI/miniButtons/SmallBtnAction'
 import bootstrapPersonUp from '@/images/bootstrap/person-up.svg'
-import getNextKin from '@/app/API/Persons_CQL/getNextKin'
+//import getNextKin from '@/app/API/Persons_CQL/getNextKin'
 import useTip from '../../Hooks/useTip'
-
+import { PersonContext } from '@/app/context/PersonContext'
 import AuthContext from '../../context/AuthContext'
 
 import stl from './NearRelative.module.css'
 import Image from 'next/image'
 
 const NearRelatives = (props) => {
-  const { persons, kinToAdd, personA, choosenPersonGender, cbAfterChange } = props
+  const { persons, personA } = props
 
   const [curId, setCurId] = useState('')
-
-  const [spouse, setSpouse] = useState(null)
+  //const [activePerson, setActivePerson] = useState('')
   const [isBtnGoDisabled, setIsBtnGoDisabled] = useState(false)
 
   const auth = useContext(AuthContext)
   const router = useRouter()
-  //const params = useParams()
-  //console.log("params = ", params);
-
+  const { personLongname, setPersonLongname } = useContext(PersonContext)
   const title = props.children
-
-  useEffect(() => {
-    if (!auth.isAdmin) {
-      const elemMiniBtn = document.getElementsByClassName('smllbtn')
-
-      if (elemMiniBtn.length > 0) {
-        for (let i = 0; i < elemMiniBtn.length; i++) {
-          elemMiniBtn[i].style.display = 'none'
-          elemMiniBtn[i].style.visibility = 'hidden'
-        }
-      }
-    }
-  }, [auth.isAdmin])
-
-  useEffect(() => {
-    const relation = personA.labels[1] === 'Man' ? 'ЖЕНА' : 'МУЖ'
-    const cbRelative = (relative) => {
-      setSpouse(relative)
-    }
-    getNextKin(personA.longname, relation, cbRelative)
-  }, [personA])
 
   const storeId = (inpt) => {
     const elemId = title + inpt.toString()
@@ -67,7 +43,6 @@ const NearRelatives = (props) => {
 
   const GotoRelative = () => {
     // определить активное поле
-
     if (!!curId) {
       const elem = document.getElementById(curId)
       // прочитать значение поля
@@ -75,15 +50,11 @@ const NearRelatives = (props) => {
         const kinB = elem.value
 
         if (kinB) {
-          router.push(`/personInfo/${kinB}`)
-        } else {
-          router.push(`/personInfo/${personA.longname}`)
+          console.log(kinB)
+          setPersonLongname(kinB)
+          router.push(`/personInfo?name=${kinB}`)
         }
-      } else {
-        router.push(`/personInfo/${personA.longname}`)
       }
-    } else {
-      router.push(`/personInfo/${personA.longname}`)
     }
   }
 

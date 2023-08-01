@@ -29,7 +29,7 @@ const PreviewCanvas = (props: any) => {
     e.preventDefault()
     const longname = e.currentTarget.id
 
-    navigate.push(`/personInfo/${longname}`)
+    navigate.push(`/personInfo?name=${longname}`)
   }
 
   const newActivePerson = (e: React.MouseEvent<HTMLImageElement>) => {

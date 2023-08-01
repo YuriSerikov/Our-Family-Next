@@ -19,7 +19,7 @@ export const SignInForm = () => {
   
   const router = useRouter()
   const auth = useContext(AuthContext);
-  //console.log(auth)
+  //console.log(auth.isAuthenticated)
 
   useEffect(() => {
       if (error) {
@@ -29,6 +29,13 @@ export const SignInForm = () => {
     setTimeout(() => clearError(), 3000);
   }, [error, clearError]);
 
+  useEffect(() => {
+    if (auth.isAuthenticated) {
+      //setTimeout(() => setForm({ email: "", password: "" }), 2000);
+      router.push('/commonList')
+      setMessage("Успешная авторизация")
+    }
+  },[auth])
     
   const changeHandler = (event:React.ChangeEvent<HTMLInputElement>) => {
       const em = event.target.value;
@@ -43,14 +50,22 @@ export const SignInForm = () => {
   };
 
   
-  const loginHandler = () => {
-  
+  const loginHandler = async () => {
+    //console.log('loginHandler')
     const elemInputMail = document.getElementById("email") as HTMLInputElement
     const elemInputPass = document.getElementById("password") as HTMLInputElement
 
     if (form.email && form.password) {
 
-      loginRequest();
+      const dataUser: {accessToken:string, userId: any, isActivated: boolean}|undefined = await loginRequest();
+
+       if (dataUser?.isActivated) {
+
+        auth.login(dataUser.accessToken, dataUser.userId, false);
+        
+      } else {
+        setMessage(`Почтовый адрес ${form.email} не подтвержден.`);
+      }
 
     } else if (!form.email) {
       setMessage("Заполните поле < Email >");
@@ -67,34 +82,19 @@ export const SignInForm = () => {
     }
   };
 
-  
-
   const loginRequest = async () => {
     try {
-       
+      //console.log('loginRequest')
       const data = await request("/api/auth/login", "POST", { ...form });
-      console.log(data)
-      
-      let isAdminLogin = data.user.role === "admin" ? true : false;
 
-      if (data.user.isActivated) {
+      const dataUser:{accessToken: string, userId:any , isActivated:boolean} = {accessToken: data?.accessToken, userId: data?.user.id, isActivated: data?.user.isActivated}
+      //console.log(dataUser)
+      return dataUser
 
-        auth.login(data.accessToken, data.user.id, isAdminLogin);
-        setMessage("Успешная авторизация");
-        setForm({ email: "", password: "" });
-        router.push("/CommonList");
-      } else {
-        setMessage(`Почтовый адрес ${form.email} не подтвержден.`);
-      }
     } catch (e: any) {
       console.log(e.message);
     }
   };
-
-  const gotoRegister = () => {
-    console.log('/login/register')
-    router.push('/login/register')
-  }
 
   return (
     <>
