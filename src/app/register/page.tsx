@@ -48,13 +48,14 @@ export default function RegisterPage() {
       if (data.email === formReg.email) {
         setMessage("Успешная регистрация");
         setFormReg({ email: "", password: "" });
-        router.push("/commonList");
+        router.push("/login");
       } else if (data.email === "exists") {
         setMessage(`Регистрация не исполнена. ${formReg.email} уже зарегистрирован`);
-        
+        router.push("/");
       }
     } catch {
       setMessage("Ошибка при исполнении запроса на регистрацию: ");
+      router.push("/");
     }
   };
 
@@ -99,7 +100,7 @@ export default function RegisterPage() {
             <Modal.Title id="contained-modal-title-vcenter">Регистрация</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
+            <Form onSubmit={registerHandler}>
               <Form.Group className="mb-3" controlId="email_reg">
                 <Form.FloatingLabel
                   label="Ваш эл.адрес"
@@ -135,7 +136,7 @@ export default function RegisterPage() {
             <Button variant="secondary" onClick={handleClose}>
               Закрыть
             </Button>
-            <Button variant="primary" onClick={registerHandler}>
+            <Button type='submit' variant="primary" onClick={registerHandler}>
               Зарегистрироваться
             </Button>
           </Modal.Footer>

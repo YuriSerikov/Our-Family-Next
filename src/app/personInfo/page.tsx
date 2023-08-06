@@ -128,11 +128,6 @@ export default function PersonIdPage() {
         break;
     }
   }, []);
-
-  //useEffect(() => {
-    //setChoosenPerson('');
-    //setChoosenPersonGender('Man');
- // }, [])
   
   useEffect(() => {
     const nextKin = [
@@ -142,7 +137,7 @@ export default function PersonIdPage() {
       "`ЭКС_МУЖ`|`ЭКС_ЖЕНА`",
       "СЫН|ДОЧЬ",
     ];
-    console.log(activePerson)
+    //console.log(activePerson)
     getPersonById(activePerson, passPerson);
 
     for (let i = 0; i < 5; i++) {
@@ -163,7 +158,11 @@ export default function PersonIdPage() {
       dateL = ConvertDateRu(person.lastday)
       setLastday(dateL)
       setAlive(false)
+    } else {
+        setLastday('')
     }
+    
+
     if (person.alive) {
       if (person.alive.toString().toLowerCase() === 'true') {
         setAlive(true)
@@ -183,12 +182,6 @@ export default function PersonIdPage() {
   const gotoCommonList = () => {
    router.push(`/commonList`)
   };
-
-  /* const cbFarther = (relatives: relativeType[]) => setFather(relatives);
-  const cbMother = (relatives: relativeType[]) => setMother(relatives);
-  const cbKids = (relatives: relativeType[]) => {setKids(relatives)};
-  const cbSpouse = (relatives: relativeType[]) => setSpouse(relatives);
-  const cbExSpouses = (relatives: relativeType[]) => { setExSpouses(relatives) }; */
 
   return (
     <>

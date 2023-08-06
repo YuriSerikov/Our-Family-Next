@@ -18,7 +18,7 @@ export const useHttp = () => {
         }
       }
 
-      const response = await fetch(url, { method, body, headers })
+      const response = await fetch(url, { method, body, headers, cache: 'no-store' })
       const data = await response.json()
 
       if (!response.ok) {
@@ -39,5 +39,5 @@ export const useHttp = () => {
 
   const clearError = useCallback(() => setError(null), [])
 
-  return { loading, request, error, clearError } //, clearError
+  return { loading, request, error, clearError } 
 }

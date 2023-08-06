@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { useState, useContext, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
-//import { PersonContext } from '@/app/context/PersonContext'
 import AuthContext from '@/app/context/AuthContext'
 import NavButtonExit from './NavBarButtonExit/NavButtonExit';
 
@@ -18,7 +17,7 @@ const Navbar = () => {
   const auth = useContext(AuthContext)
   
   useEffect(() => {
-    console.log('auth =',auth.isAuthenticated)
+    console.log('auth isAuthenticated =', auth.isAuthenticated)
     setIsActivated(auth.isAuthenticated)
   },[auth])
   
@@ -28,7 +27,6 @@ const Navbar = () => {
   const closeMobileMenu = () => {
     setClick(false)
   } 
-  
   
   return (
     <>

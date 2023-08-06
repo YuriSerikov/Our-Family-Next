@@ -452,7 +452,7 @@ export default function Album() {
                   <LoaderLissajous />
                 </div>
               ) : (
-                <div>
+                <>
                   <Container fluid>
                     {miniPhotos.map((miniPhoto, index) => (
                       <div className={stl.mini_photo} ref={cardRef} key={index}>
@@ -478,8 +478,8 @@ export default function Album() {
                         />
                       </div>
                     ))}
-                  </Container>  
-                </div>
+                  </Container>
+                </>
               )}
               
           </div>

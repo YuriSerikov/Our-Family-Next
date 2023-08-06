@@ -10,6 +10,7 @@ import { PersonsListProvider } from './context/PersonsListContext'
 import AuthContext from "./context/AuthContext";
 import type { Metadata } from 'next'
 import {useAuth} from "./Hooks/auth.hook";
+//import { useEffect } from 'react'
 
 
 export const metadata: Metadata = {
@@ -23,16 +24,24 @@ export default function RootLayout({
   children: React.ReactNode
   }) {
   
-  const { token, login, logout, userId, isAdmin } = useAuth();
-console.log(token)
-  const isAuthenticated = !!token;
+  //const { token, login, logout, userId, isAdmin } = useAuth();
+  const auth = useAuth();
+  console.log('user tocken=', auth.token)
   
+  const isAuthenticated = !!auth.token;
   
   return (
     <html lang="en">
       <body>
         <AuthContext.Provider
-          value={{ token, login, logout, userId, isAdmin, isAuthenticated }}
+          value={{
+            token: auth.token,
+            login: auth.login,
+            logout: auth.logout,
+            userId: auth.userId,
+            isAdmin: auth.isAdmin,
+            isAuthenticated: isAuthenticated
+          }}
           >
           <PersonsListProvider>
             <PersonProvider>
@@ -40,12 +49,12 @@ console.log(token)
                 <main>
                   {children}
                 </main>
-              </PersonProvider>
-            </PersonsListProvider>
-          </AuthContext.Provider>
+            </PersonProvider>
+          </PersonsListProvider>
+        </AuthContext.Provider>
+        
         <TheFooter />
       </body>
-      
     </html>
   )
 }
