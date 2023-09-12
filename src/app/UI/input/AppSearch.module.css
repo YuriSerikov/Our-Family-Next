@@ -1,4 +1,4 @@
-@import '../../scss/fonts.scss';
+/* @import '../../scss/fonts.scss'; */
 
 .appInput {
   width: calc(100vw - 10px);
@@ -6,7 +6,7 @@
   padding: 3px 15px;
   margin: 10px;
   border: 2px solid teal;
-  font-family: 'Roboto-Regular';
+  font-family: var(--font-roboto-reg);
   font-size: small;
   height: auto;
 }

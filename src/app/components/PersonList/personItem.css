@@ -36,7 +36,7 @@
   width: calc(90vw - 70px);
   vertical-align: initial;
   margin-left: 5px;
-  font-family: 'Roboto-Regular';
+  font-family: var(--font-roboto-reg);
   font-size: small;
 }
 img {

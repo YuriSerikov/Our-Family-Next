@@ -1,4 +1,4 @@
-@import '../scss/fonts.scss';
+/* @import '../scss/fonts.scss'; */
 
 .about {
   display: block;
@@ -66,7 +66,7 @@ input.registrationinput:focus {
   color: yellow;
   text-align: center;
   font-size: 1rem;
-  font-family: 'RobotoCondensed-Regular';
+  font-family: var(--font-roboto-condensed);
   justify-content: center;
   border: 2px solid black;
   border-radius: 7px;
@@ -97,7 +97,7 @@ input.registrationinput:focus {
   margin: 10px 30px;
   border-radius: 7px;
   overflow-y: scroll;
-  font-family: 'Roboto-Regular';
+  font-family: var(--font-roboto-reg);
 }
 
 .overflow {

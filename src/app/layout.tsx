@@ -10,8 +10,43 @@ import { PersonsListProvider } from './context/PersonsListContext'
 import AuthContext from "./context/AuthContext";
 import type { Metadata } from 'next'
 import {useAuth} from "./Hooks/auth.hook";
-//import { useEffect } from 'react'
+import localFont from 'next/font/local'
 
+const localOpenSans = localFont({
+  src: [
+    { path: './fonts/OpenSans-Regular.woff2' },
+  ],
+  display: 'swap',
+  variable: '--font-opensans-reg'
+})
+const localOpenSansBold = localFont({
+  src: [
+    { path: './fonts/OpenSans-Bold.woff2' },
+  ],
+  display: 'swap',
+  variable: '--font-opensans-bold'
+})
+const localRobotoRegular = localFont({
+  src: [
+    { path: './fonts/Roboto-Regular.woff2' },
+  ],
+  display: 'swap',
+  variable: '--font-roboto-reg'
+})
+const localRobotoMedium = localFont({
+  src: [
+    { path: './fonts/Roboto-Medium.woff2' },
+  ],
+  display: 'swap',
+  variable: '--font-roboto-medium'
+})
+const localRobotoCondensed = localFont({
+  src: [
+    { path: './fonts/RobotoCondensed-Regular.woff2' },
+  ],
+  display: 'swap',
+  variable: '--font-roboto-condensed'
+})
 
 export const metadata: Metadata = {
   title: 'Our Family',
@@ -26,7 +61,7 @@ export default function RootLayout({
   
   //const { token, login, logout, userId, isAdmin } = useAuth();
   const auth = useAuth();
-  console.log('user tocken=', auth.token)
+  //console.log('user tocken=', auth.token)
   
   const isAuthenticated = !!auth.token;
   

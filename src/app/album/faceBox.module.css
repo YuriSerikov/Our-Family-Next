@@ -1,0 +1,48 @@
+.show_boxes_container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  display: none;
+}
+.box_ext {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  z-index: 2050;
+  display: block;
+}
+.facebox {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 2100;
+  display: flex;
+  color: white;
+  font-weight: 500;
+  align-items: flex-end;
+  padding: 4px;
+  display: block;
+}
+
+.facebox:hover {
+  background-color: transparent;
+  border: 2px dashed yellowgreen;
+  color: white;
+}
+
+.lbl_facebox {
+  position: relative;
+  color: transparent;
+  font-weight: 700;
+  display: none;
+  z-index: 2150;
+  display: block;
+}
+.lbl_facebox:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}

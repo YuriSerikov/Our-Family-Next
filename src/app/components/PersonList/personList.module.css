@@ -8,7 +8,7 @@
   margin-left: 10px;
   text-align: 'center';
   align-content: center;
-  font-family: 'OpenSans-Bold';
+  font-family: var(--font-opensans-bold);
   font-weight: 700;
   font-size: small;
   color: teal;

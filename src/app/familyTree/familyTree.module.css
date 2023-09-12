@@ -2,7 +2,7 @@
 
 .tree_header {
   margin-left: 30px;
-  font-family: 'RobotoCondensed-Regular', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--font-roboto-condensed);
   font-size: medium;
   font-weight: 700;
   color: teal;
@@ -92,7 +92,7 @@
 @media screen and (min-width: 960px) {
   .tree_header {
     margin-left: 30px;
-    font-family: 'RobotoCondensed-Regular', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--font-roboto-condensed);
     font-size: 18px;
     font-weight: 700;
   }

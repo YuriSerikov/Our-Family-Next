@@ -23,7 +23,7 @@
   margin: 30px 30px;
   border-radius: 7px;
   overflow-y: scroll;
-  font-family: 'Roboto-Regular';
+  font-family: var(--font-roboto-reg);
 }
 /* Mobile */
 @media (max-width: 700px) {

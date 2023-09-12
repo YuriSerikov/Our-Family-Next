@@ -20,7 +20,7 @@
   border: none;
   border-bottom: 1px dotted teal;
   font-size: medium;
-  font-family: 'Roboto-Regular', Times, serif;
+  font-family: var(--font-roboto-reg);
 }
 .btnplace {
   width: 20px;

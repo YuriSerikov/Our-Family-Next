@@ -20,7 +20,8 @@ import allFioPersonsInPictures from '@/app/API/PhotosWR/allFioPersonsInPictures'
 import MessageHook from "@/app/Hooks/MessageHook";
 import ModalInfoInput from "@/app/components/ModalInfoInput/ModalInfoInput";
 import Image from "next/image";
-
+import DrawFaceBoxes from './DrawFaceBoxes'
+import ModalPhotoFilter from './ModalPhotoFilter'
 
 export const metadata: Metadata = {
   title: 'Album | Our Family'
@@ -45,6 +46,8 @@ export default function Album() {
   const [photoAmount, setPhotoAmount] = useState<number>(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [modalFilterIsOpen, setModalFilterIsOpen] = useState(false)
+  const [strFilter, setStrFilter] = useState('')
   
   const scrollTopY = useRef(0);
   const activePhotoName = useRef<string | null>("");
@@ -105,22 +108,36 @@ export default function Album() {
     };
 
     async function getAmountPhotoForPerson(person:string) {
-      await getAmountPhoto(person, cbAmountPhoto);
+      await getAmountPhoto(person, cbAmountPhoto, strFilter);
     }
 
     getAmountPhotoForPerson(activePerson)
     
-  }, [activePerson]);
+  }, [activePerson, strFilter]);
 
   useEffect(() => {
     const end_digit = lastDigit(photoAmount)
     const text = photosEnding(end_digit)
-    setTitle(`Альбом - ${activePerson}: ${photoAmount} ${text}`);
+    
+    if (strFilter) {
+        
+        if (strFilter.substring(1, 2) === 'S') {
+          setTitle(
+            `Альбом "${activePerson}": ${photoAmount} ${text} / начинается с: ${strFilter.substring(12)}`
+          )
+        } else {
+          setTitle(
+            `Альбом "${activePerson}": ${photoAmount} ${text} / содержит: ${strFilter.substring(9)}`
+          )
+        }
+      } else {
+        setTitle(`Альбом "${activePerson}": ${photoAmount} ${text} / без фильтра`)
+      }
 
-  },[activePerson, photoAmount])
+  },[activePerson, photoAmount, strFilter])
 
   const PassSelectedPerson = (selectedOption: IPsnSelectList) => {
-    setTitle("Альбом: " + selectedOption.label);
+    //setTitle("Альбом: " + selectedOption.label);
     setActivePerson(selectedOption.label);
 
   };
@@ -282,7 +299,7 @@ export default function Album() {
     };
 
     if (!activePerson) {
-      DownloadAllMiniPhoto(null, 0, limitNew, cbMiniPhotos); //order by Id(p)
+      DownloadAllMiniPhoto(null, 0, limitNew, cbMiniPhotos, strFilter); //order by Id(p)
     }
   }, [activePerson]);
 
@@ -370,7 +387,7 @@ export default function Album() {
 
   async function selectBtnHandler() {
     setIsMiniPhotosLoaded(false);
-    await DownloadAllMiniPhoto(activePerson, 0, limitNew, passMiniPhotos);
+    await DownloadAllMiniPhoto(activePerson, 0, limitNew, passMiniPhotos, strFilter);
   }
 
   useEffect(() => {
@@ -385,7 +402,7 @@ export default function Album() {
 
         setMiniPhotos(arrTemp);
       };
-      await DownloadAllMiniPhoto(activePerson, skip, limit, cbMiniPhotos);
+      await DownloadAllMiniPhoto(activePerson, skip, limit, cbMiniPhotos, strFilter);
     }
 
     const lastCardObserver = new IntersectionObserver(
@@ -409,13 +426,15 @@ export default function Album() {
     let lastCardI = 0;
 
     if (isMiniPhotosLoaded) {
-      cards = document.getElementsByClassName(stl.mini_photo) as HTMLCollectionOf<HTMLDivElement> | any
-      lastCardI = cards.length - 1;
+      if (cards.length > 0) {
+        cards = document.getElementsByClassName(stl.mini_photo) as HTMLCollectionOf<HTMLDivElement> | any
+        lastCardI = cards.length - 1;
 
-      if (isScrollDown) {
-        lastCardObserver.observe(cards[lastCardI]);
-      } else {
-        lastCardObserver.unobserve(cards[lastCardI]);
+        if (isScrollDown) {
+          lastCardObserver.observe(cards[lastCardI]);
+        } else {
+          lastCardObserver.unobserve(cards[lastCardI]);
+        }
       }
     }
   }, [
@@ -427,6 +446,13 @@ export default function Album() {
     skipN,
   ]);
 
+  const handleShowFilterForm = () => {
+    setModalFilterIsOpen(true)
+  }
+
+  const closeModalFilter = () => {
+    setModalFilterIsOpen(false)
+  }
 
   return (
     <>
@@ -501,6 +527,13 @@ export default function Album() {
             >
               Отбор по персоне
             </Button>
+            <Button
+                variant='outline-success'
+                size='sm'
+                className={stl.btn_action_mob}
+                onClick={handleShowFilterForm}>
+                Фильтр
+              </Button>
           </div>
         </div>
         <div id="lightbox">
@@ -535,7 +568,23 @@ export default function Album() {
             cbMessage={cbMessage}
           ></ModalInfoInput>
         </div>
+        <div>
+          <ModalPhotoFilter
+            modalIsOpen={modalFilterIsOpen}
+            closeModal={closeModalFilter}
+            cbFilter={setStrFilter}
+          />
+        </div>
       </div>
+      {isOpen ? (
+        <DrawFaceBoxes
+          photoFilename={activePhotoName.current}
+          w_ModalArea={w_ModalArea.current}
+          h_ModalArea={h_ModalArea.current}
+        />
+      ) : (
+        <></>
+      )}
     </>
   )
 }

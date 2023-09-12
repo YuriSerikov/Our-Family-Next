@@ -5,7 +5,7 @@
 .first_row {
   text-align: center;
   font-weight: 800;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font-roboto-reg);
   font-size: 24px;
 }
 .connection {
