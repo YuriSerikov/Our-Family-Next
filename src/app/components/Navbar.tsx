@@ -17,7 +17,7 @@ const Navbar = () => {
   const auth = useContext(AuthContext)
   
   useEffect(() => {
-    console.log('auth isAuthenticated =', auth.isAuthenticated)
+    //console.log('auth isAuthenticated =', auth.isAuthenticated)
     setIsActivated(auth.isAuthenticated)
   },[auth])
   

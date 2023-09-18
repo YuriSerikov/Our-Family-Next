@@ -23,7 +23,7 @@ export default function LoginPage() {
   
   const router = useRouter()
   const auth = useContext(AuthContext);
-  console.log('auth.isAuthenticated',auth.isAuthenticated)
+  //console.log('auth.isAuthenticated',auth.isAuthenticated)
 
   useEffect(() => {
       if (error) {
@@ -47,7 +47,7 @@ export default function LoginPage() {
 
   const loginRequest = async () => {
     try {
-      console.log('loginRequest')
+      //console.log('loginRequest')
       const data = await request("/api/auth/login", "POST", { ...form });
 
       let isAdminLogin = data.user.role === "admin" ? true : false;
@@ -62,7 +62,7 @@ export default function LoginPage() {
       }
 
       const dataUser:{accessToken: string, userId:any , isActivated:boolean} = {accessToken: data?.accessToken, userId: data?.user.id, isActivated: data?.user.isActivated}
-      console.log(dataUser)
+      //console.log(dataUser)
       return dataUser
 
     } catch (e: any) {

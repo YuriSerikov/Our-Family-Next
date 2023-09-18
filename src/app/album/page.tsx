@@ -45,7 +45,7 @@ export default function Album() {
   const [skipN, setSkipN] = useState(0);
   const [photoAmount, setPhotoAmount] = useState<number>(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
+  //const [hasMore, setHasMore] = useState(true);
   const [modalFilterIsOpen, setModalFilterIsOpen] = useState(false)
   const [strFilter, setStrFilter] = useState('')
   
@@ -194,8 +194,10 @@ export default function Album() {
   const handleScroll = (event: React.UIEvent) => {
     let curScrroll = event.currentTarget.scrollTop;
     if (curScrroll - scrollTopY.current >= 0) {
+      //console.log('scrolling down')
       setIsScrollDown(true);
     } else {
+      //console.log('scrolling up')
       setIsScrollDown(false);
     }
     scrollTopY.current = event.currentTarget.scrollTop;
@@ -408,10 +410,8 @@ export default function Album() {
     const lastCardObserver = new IntersectionObserver(
       (entries) => {
         let lastcard = entries[entries.length - 1];
-
+        //console.log('Last entry =', lastcard.isIntersecting)
         if (!lastcard.isIntersecting) return;
-
-        // увеличиваем счетчик уже загруженных миниатюр
         
         if (photoAmount > skipN) {
           appendMiniPhotos(skipN, limitAdd);
@@ -424,12 +424,14 @@ export default function Album() {
 
     let cards: any[] = [];
     let lastCardI = 0;
-
+      //console.log(isMiniPhotosLoaded)
     if (isMiniPhotosLoaded) {
+      cards = document.getElementsByClassName(stl.mini_photo) as HTMLCollectionOf<HTMLDivElement> | any
+      //console.log(cards.length)
       if (cards.length > 0) {
-        cards = document.getElementsByClassName(stl.mini_photo) as HTMLCollectionOf<HTMLDivElement> | any
+        
         lastCardI = cards.length - 1;
-
+        //console.log('Last entry =', lastCardI)
         if (isScrollDown) {
           lastCardObserver.observe(cards[lastCardI]);
         } else {
@@ -444,6 +446,7 @@ export default function Album() {
     miniPhotos,
     photoAmount,
     skipN,
+    strFilter
   ]);
 
   const handleShowFilterForm = () => {
