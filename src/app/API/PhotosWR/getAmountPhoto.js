@@ -12,9 +12,9 @@ async function getAmountPhoto(person, passBackResult, filter) {
     }
   } else {
     if (person) {
-      cql = `MATCH (p:Photo)<-[:IN_PICTURE]-(n:Person {longName:'${person}'}) WHERE p.photoTitle ${filter} RETURN count(*) AS amount`
+      cql = `MATCH (p:Photo)<-[:IN_PICTURE]-(n:Person {longName:'${person}'}) WHERE toLower(p.photoTitle) ${filter} RETURN count(*) AS amount`
     } else {
-      cql = `MATCH (p:Photo) WHERE p.photoTitle ${filter} RETURN count(*) AS amount`
+      cql = `MATCH (p:Photo) WHERE toLower(p.photoTitle) ${filter} RETURN count(*) AS amount`
     }
   }
   //console.log(cql)

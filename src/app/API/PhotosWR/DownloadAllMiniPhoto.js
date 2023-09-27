@@ -28,12 +28,12 @@ async function DownloadAllMiniPhoto(person, skip, limit, callback, filter) {
     if (person) {
       cql =
         `MATCH (n:Person {longName:"${person}"})--(p:Photo) ` +
-        `WHERE p.photoTitle ${filter}` +
+        `WHERE toLower(p.photoTitle) ${filter}` +
         `RETURN id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
         `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY p.photoTitle SKIP ${skip} LIMIT ${limit}`
     } else {
       cql =
-        `MATCH (p:Photo) WHERE p.photoTitle ${filter} RETURN id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
+        `MATCH (p:Photo) WHERE toLower(p.photoTitle) ${filter} RETURN id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
         `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY id(p) DESC SKIP ${skip}  LIMIT ${limit}`
     }
   }

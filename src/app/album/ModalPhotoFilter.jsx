@@ -29,6 +29,14 @@ const ModalPhotoFilter = (props) => {
     setTitleStartsWith((prev) => !prev)
     //console.log('radio:', titleStartsWith)
   }
+  const handleControlChange = (e) => {
+    let controlValue = e.target.value
+    if (controlValue) {
+      setFilter(controlValue.toLowerCase())
+    } else {
+      setFilter('')
+    }
+  }
 
   return (
     <>
@@ -53,7 +61,7 @@ const ModalPhotoFilter = (props) => {
                 name="title"
                 value={filter}
                 placeholder="введите искомый текст"
-                onChange={(e) => setFilter(e.target.value)}
+                onChange={handleControlChange}
               />
             </Form.Group>
           </Form>
