@@ -2,7 +2,7 @@
 import neo4j from 'neo4j-driver'
 import { bd_constants } from '../../Constants/bd_constants'
 
-async function DownloadAllMiniPhoto(person, skip, limit, callback, filter) {
+async function DownloadAllMiniPhoto(person, skip, limit, callback, filter, reverseOrder) {
   //const session = startSession();
   const driver = neo4j.driver(bd_constants.bd_path, neo4j.auth.basic(bd_constants.bd_admin, bd_constants.bd_pass))
   const session = driver.session({
@@ -18,11 +18,11 @@ async function DownloadAllMiniPhoto(person, skip, limit, callback, filter) {
       cql =
         `MATCH (n:Person {longName:"${person}"})--(p:Photo) ` +
         `RETURN id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
-        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY p.photoTitle SKIP ${skip} LIMIT ${limit}`
+        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY p.photoTitle ${reverseOrder} SKIP ${skip} LIMIT ${limit}`
     } else {
       cql =
         `MATCH (p:Photo) return id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
-        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY id(p) DESC SKIP ${skip}  LIMIT ${limit}`
+        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY id(p) DESC SKIP ${skip} LIMIT ${limit}`
     }
   } else {
     if (person) {
@@ -30,11 +30,11 @@ async function DownloadAllMiniPhoto(person, skip, limit, callback, filter) {
         `MATCH (n:Person {longName:"${person}"})--(p:Photo) ` +
         `WHERE toLower(p.photoTitle) ${filter}` +
         `RETURN id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
-        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY p.photoTitle SKIP ${skip} LIMIT ${limit}`
+        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY p.photoTitle ${reverseOrder} SKIP ${skip} LIMIT ${limit}`
     } else {
       cql =
         `MATCH (p:Photo) WHERE toLower(p.photoTitle) ${filter} RETURN id(p) AS id, p.avatar AS miniPhoto, p.avatarWidth AS miniPhotoWidth, ` +
-        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY id(p) DESC SKIP ${skip}  LIMIT ${limit}`
+        `p.avatarHeight AS miniPhotoHeight, p.filename AS filename ORDER BY id(p) DESC SKIP ${skip} LIMIT ${limit}`
     }
   }
 

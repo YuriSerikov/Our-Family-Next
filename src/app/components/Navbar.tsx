@@ -54,7 +54,7 @@ const Navbar = () => {
               <div>
                 <Link href='/' className='nav_links' onClick={closeMobileMenu}>О программе</Link>
                 <Link href='/login' className='nav_links' onClick={closeMobileMenu}>Вход</Link>
-                <Link href='/register' className='nav_links' onClick={closeMobileMenu}>Регистрация</Link>
+                {/* <Link href='/register' className='nav_links' onClick={closeMobileMenu}>Регистрация</Link> */}
               </div>
               )
             }

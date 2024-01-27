@@ -4,12 +4,14 @@ import Form from 'react-bootstrap/Form'
 import { useState } from 'react'
 
 const ModalPhotoFilter = (props) => {
-  const { modalIsOpen, closeModal, cbFilter } = props
+  const { modalIsOpen, closeModal, cbFilter, cbOrder } = props
 
   const [filter, setFilter] = useState('')
-  const [titleStartsWith, setTitleStartsWith] = useState(false)
+  const [titleStartsWith, setTitleStartsWith] = useState(true)
+  const [orderNewFirst, setOrderNewFirst] = useState(true)
 
   let strFilter = ''
+  let strOrder = ''
 
   const handleSave = () => {
     if (filter) {
@@ -21,13 +23,22 @@ const ModalPhotoFilter = (props) => {
     } else {
       strFilter = ''
     }
-    //console.log('strFilter = ', strFilter)
+
+    if (orderNewFirst) {
+      strOrder = 'DESC'
+    } else {
+      strOrder = ''
+    }
+
     cbFilter(strFilter)
+    cbOrder(strOrder)
     closeModal()
   }
   const handleCheckChange = () => {
     setTitleStartsWith((prev) => !prev)
-    //console.log('radio:', titleStartsWith)
+  }
+  const handleOrderCheckChange = () => {
+    setOrderNewFirst((prev) => !prev)
   }
   const handleControlChange = (e) => {
     let controlValue = e.target.value
@@ -51,7 +62,7 @@ const ModalPhotoFilter = (props) => {
                 as="input"
                 type="checkbox"
                 name="startsWith"
-                defaultChecked={false}
+                defaultChecked={true}
                 label="заголовок начинается с ..."
                 onClick={handleCheckChange}
               />
@@ -62,6 +73,14 @@ const ModalPhotoFilter = (props) => {
                 value={filter}
                 placeholder="введите искомый текст"
                 onChange={handleControlChange}
+              />
+              <Form.Check
+                as="input"
+                type="checkbox"
+                name="orderNewFirst"
+                defaultChecked={true}
+                label="выводить в обратной хронологии"
+                onClick={handleOrderCheckChange}
               />
             </Form.Group>
           </Form>

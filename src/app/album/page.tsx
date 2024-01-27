@@ -45,9 +45,10 @@ export default function Album() {
   const [skipN, setSkipN] = useState(0);
   const [photoAmount, setPhotoAmount] = useState<number>(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  //const [hasMore, setHasMore] = useState(true);
+  
   const [modalFilterIsOpen, setModalFilterIsOpen] = useState(false)
   const [strFilter, setStrFilter] = useState('')
+  const [strOrder, setStrOrder] = useState('')
   
   const scrollTopY = useRef(0);
   const activePhotoName = useRef<string | null>("");
@@ -123,21 +124,21 @@ export default function Album() {
         
         if (strFilter.substring(1, 2) === 'S') {
           setTitle(
-            `Альбом "${activePerson}": ${photoAmount} ${text} / начинается с: ${strFilter.substring(12)}`
+            `Альбом "${activePerson}": ${photoAmount} ${text} / начинается с: ${strFilter.substring(12)} / ${strOrder} `  
           )
         } else {
           setTitle(
-            `Альбом "${activePerson}": ${photoAmount} ${text} / содержит: ${strFilter.substring(9)}`
+            `Альбом "${activePerson}": ${photoAmount} ${text} / содержит: ${strFilter.substring(9)} / ${strOrder}`
           )
         }
       } else {
-        setTitle(`Альбом "${activePerson}": ${photoAmount} ${text} / без фильтра`)
+        setTitle(`Альбом "${activePerson}": ${photoAmount} ${text} / без фильтра / ${strOrder}`)
       }
-
-  },[activePerson, photoAmount, strFilter])
+    
+  },[activePerson, photoAmount, strFilter, strOrder])
 
   const PassSelectedPerson = (selectedOption: IPsnSelectList) => {
-    //setTitle("Альбом: " + selectedOption.label);
+    
     setActivePerson(selectedOption.label);
 
   };
@@ -301,7 +302,7 @@ export default function Album() {
     };
 
     if (!activePerson) {
-      DownloadAllMiniPhoto(null, 0, limitNew, cbMiniPhotos, strFilter); //order by Id(p)
+      DownloadAllMiniPhoto(null, 0, limitNew, cbMiniPhotos, strFilter, ''); //order by Id(p)
     }
   }, [activePerson]);
 
@@ -389,7 +390,7 @@ export default function Album() {
 
   async function selectBtnHandler() {
     setIsMiniPhotosLoaded(false);
-    await DownloadAllMiniPhoto(activePerson, 0, limitNew, passMiniPhotos, strFilter);
+    await DownloadAllMiniPhoto(activePerson, 0, limitNew, passMiniPhotos, strFilter, strOrder);
   }
 
   useEffect(() => {
@@ -404,7 +405,7 @@ export default function Album() {
 
         setMiniPhotos(arrTemp);
       };
-      await DownloadAllMiniPhoto(activePerson, skip, limit, cbMiniPhotos, strFilter);
+      await DownloadAllMiniPhoto(activePerson, skip, limit, cbMiniPhotos, strFilter, strOrder);
     }
 
     const lastCardObserver = new IntersectionObserver(
@@ -424,10 +425,10 @@ export default function Album() {
 
     let cards: any[] = [];
     let lastCardI = 0;
-      //console.log(isMiniPhotosLoaded)
+      
     if (isMiniPhotosLoaded) {
       cards = document.getElementsByClassName(stl.mini_photo) as HTMLCollectionOf<HTMLDivElement> | any
-      //console.log(cards.length)
+      
       if (cards.length > 0) {
         
         lastCardI = cards.length - 1;
@@ -456,7 +457,7 @@ export default function Album() {
   const closeModalFilter = () => {
     setModalFilterIsOpen(false)
   }
-
+  
   return (
     <>
       <p className={stl.album_header}>{title}</p>
@@ -576,6 +577,7 @@ export default function Album() {
             modalIsOpen={modalFilterIsOpen}
             closeModal={closeModalFilter}
             cbFilter={setStrFilter}
+            cbOrder={setStrOrder}
           />
         </div>
       </div>
