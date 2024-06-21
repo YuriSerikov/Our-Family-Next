@@ -553,6 +553,7 @@ export default function Album() {
               imageTitle={imageTitle}
               imageCaption={imageCaption}
               onImageLoad={getImgParams}
+              // discourageDownloads={true}
             />
           ) : (
             <></>

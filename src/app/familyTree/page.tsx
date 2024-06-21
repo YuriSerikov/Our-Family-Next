@@ -108,7 +108,7 @@ export default function FamilyTree() {
                   className={stl.btn_action_mob}
                   onClick={handleRelatives}
                 >
-                  Показать родственников
+                  Список родных
               </Button>
             </div>
           </div>
