@@ -7,6 +7,7 @@ import personKidPlace from "./personKidPlace";
 import { IPersonCard } from '../../models/psnCardType'
 import { ISpouseType } from '../../models/spousesType'
 import { IExspouseType } from '../../models/exsposesType'
+import { constRelTree } from "../Relatives/constRelTree";
 
 const mainBranch = (
   objPerson:IPersonCard,
@@ -60,7 +61,7 @@ const mainBranch = (
       (elem) => elem.longname === arrPersonKids[i].longname && elem.level > 0
     );
     if (indexPsnInArr > -1) {
-      arrAllPersons[indexPsnInArr].lineColor = "brown";
+      arrAllPersons[indexPsnInArr].lineColor = constRelTree.lineColor;
     } else {
       arrAllPersons = personKidPlace(
         objPerson,

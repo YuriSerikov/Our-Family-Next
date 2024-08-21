@@ -16,7 +16,7 @@ const leftUpperBranch = (
   arrAllPersons:IPersonCard[],
   spouses:ISpouseType[],
   exspouses:IExspouseType[],
-  lineColor = "green"
+  lineColor = constRelTree.lineColorUp1
 ) => {
   if (!objPerson) {
     return arrAllPersons;

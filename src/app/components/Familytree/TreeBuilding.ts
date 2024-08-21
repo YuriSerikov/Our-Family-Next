@@ -21,6 +21,8 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
   const relMomDad = relConst.relationDadOrMom
   const relHusband = relConst.relationHusband
   const relExHusband = relConst.relationExHusband
+  const colorLineGreen = constRelTree.lineColorUp1
+  const colorLineBrown = constRelTree.lineColorUp2
 
   let arrAllRelPersons: IPersonCard[] = []
   let mainPersons: IPersonCard[]  = []
@@ -35,10 +37,7 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
     arrCouplesWithoutKids: [],
   }
   const defaultLineColor = constRelTree.lineColor
-  const lineColorToDevorced = 'blue'
-
-  //const x0 = gridstepX * 4 + mgn;
-  //const y0 = constRelTree.startPointY + gridstepY;
+  const lineColorToDevorced = constRelTree.lineColorToDevorced
 
   const cbPersons =
     (recievedPersons: { parent: string, relation: string, longname: string, gender: string, minicard: string }[]) => {
@@ -268,7 +267,7 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
           leftCoupleLeftPsn.dad,
           leftCoupleLeftPsn.mother,
           arrAllRelPersons,
-          'green',
+          colorLineGreen,
         )
       }
 
@@ -279,7 +278,7 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
           leftCoupleRightPsn.dad,
           leftCoupleRightPsn.mother,
           arrAllRelPersons,
-          'brown',
+          colorLineBrown,
         )
       }
     }
@@ -308,7 +307,6 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
       let rightCoupleLeftPsn = rightCouple.coupleLeftPsn
       let rightCoupleRightPsn = rightCouple.coupleRightPsn
 
-      //rightCoupleLeftPsn = null
       const rightFirstUpperBranchIsOn = true
       if (!!rightCoupleLeftPsn && rightFirstUpperBranchIsOn) {
         //  построение первой верхней правой ветви: от левого родителя правой персоны
@@ -316,7 +314,7 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
           rightCoupleLeftPsn.dad,
           rightCoupleLeftPsn.mother,
           arrAllRelPersons,
-          'brown',
+          colorLineBrown,
         )
       }
 
@@ -327,16 +325,17 @@ async function TreeBuilding(curPerson: string, cbRelatives: any) {
           rightCoupleRightPsn.dad,
           rightCoupleRightPsn.mother,
           arrAllRelPersons,
-          'green',
+          colorLineGreen,
         )
       }
     }
 
+    // исключение 0-ого уровня из выходных данных
+    arrAllRelPersons = arrAllRelPersons.filter((elem) => elem.level !== 0)
+
     // изменить цвет линии персона - отец/мать в разводе
     arrAllRelPersons = setColorLine(arrAllRelPersons, lineColorToDevorced, spouses)
 
-    // исключение 0-ого уровня из выходных данных
-    arrAllRelPersons = arrAllRelPersons.filter((elem) => elem.level !== 0)
     // построение дерева закончено
 
     // добавить изображения карточек

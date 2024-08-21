@@ -10,4 +10,7 @@ export const constRelTree = {
   startPointX: 530,
   startPointY: 180,
   lineColor: "black",
+  lineColorToDevorced: 'blue',
+  lineColorUp1: 'green',
+  lineColorUp2: 'brown',
 };

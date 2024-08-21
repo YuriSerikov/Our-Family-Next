@@ -28,7 +28,7 @@ const personKidPlace = (
     (elem) => elem.level !== 0 && elem.level > kidLevel - 1
   );
   if (arrPersonPlaced.length > 0) {
-    //arrKidLevel.sort((a, b) => a.pozX - b.pozX);
+    
     for (let i = 0; i < arrPersonPlaced.length; i++) {
       if (arrPersonPlaced[i].pozX >= pozXlevelFree) {
         pozXlevelFree = arrPersonPlaced[i].pozX + gridstepX;
@@ -132,23 +132,11 @@ const personKidPlace = (
           break;
         case false:
           //  размещение детей разведенной женщины
+          pozXlevelFree = Math.max(pozXlevelFree, pozXparent);
           if (kidsAmount === 1) {
-            pozXlevelFree = Math.max(pozXlevelFree, pozXparent);
             arrPersons[k].pozX = pozXlevelFree + gridstepX / 2;
-          } else if (kidsAmount === 2) {
-            if (pozXparent - gridstepX > pozXlevelFree) {
-              arrPersons[k].pozX = pozXparent - gridstepX;
-            } else {
-              arrPersons[k].pozX = pozXlevelFree;
-            }
           } else {
-            if (pozXparent - 2 * gridstepX > pozXlevelFree) {
-              arrPersons[k].pozX = pozXparent - gridstepX * 2;
-            } else if (parent2.pozX - gridstepX > pozXlevelFree) {
-              arrPersons[k].pozX = pozXlevelFree - gridstepX;
-            } else {
-              arrPersons[k].pozX = pozXlevelFree;
-            }
+            arrPersons[k].pozX = pozXlevelFree
           }
 
           break;

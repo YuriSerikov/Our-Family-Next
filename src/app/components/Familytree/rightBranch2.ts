@@ -8,6 +8,7 @@ import personKidPlace from "./personKidPlace";
 import { IPersonCard } from '../../models/psnCardType'
 import { ISpouseType } from '../../models/spousesType'
 import { IExspouseType } from '../../models/exsposesType'
+import { constRelTree } from "../Relatives/constRelTree";
 
 const rightBranch2 = (
   rightMainPerson:IPersonCard,
@@ -66,7 +67,7 @@ const rightBranch2 = (
           elem.longname === brothersAndSisters[i].longname && elem.level > 0
       );
       if (indexPsnInArr > -1) {
-        arrAllRelPersons[indexPsnInArr].lineColor = "brown";
+        arrAllRelPersons[indexPsnInArr].lineColor = constRelTree.lineColor;
       } else {
         arrAllRelPersons = personKidPlace(
           objPerson,

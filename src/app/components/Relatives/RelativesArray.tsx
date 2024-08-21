@@ -10,10 +10,8 @@ import buildDirectBranch from "./buildDirectBranch";
 import trimLeftSpace from "./trimLeftSpace";
 import { IPersonCard } from '../../models/psnCardType'
 import { IcouplesWithoutKids } from '../../models/couplesWithoutKidsType'
-//import cqlListOfPersonsFromArray from './cqlListOfPersonsFromArray'
-//import getIconsWithList from '../../API/Persons_CQL/Relations/getIconsWithList'
 import addMiniCardsToTree from "./addMiniCardsToTree";
-//import { useState } from "react";
+
 
 async function RelativesArray(
   curPerson: string,
@@ -23,7 +21,6 @@ async function RelativesArray(
     arrCouplesWithoutKids: IcouplesWithoutKids[]
 }) => void) {
   
-  //const [miniCardsFinal, setMiniCardsFinal] = useState<{longname:string, minicard: string}[]>([])
   let isMan = true;
   let relArray: IPersonCard[] = [];
   let spouses: {husband: string, wife: string}[] = [];
@@ -34,10 +31,7 @@ async function RelativesArray(
   const relMomDad = relConst.relationDadOrMom;
   const relHusband = relConst.relationHusband;
   const relExHusband = relConst.relationExHusband;
-  const lineColorToDevorced = "blue";
-
-  //let x0 = constRelTree.startPointX; // мужская позция, относительно кот. строим дерево 530px
-  //let y0 = constRelTree.marginY + (constRelTree.miniHeight + constRelTree.marginY) * 2;
+  const lineColorToDevorced = constRelTree.lineColorToDevorced;
 
   if (!curPerson) {
     return;
@@ -129,36 +123,6 @@ async function RelativesArray(
     // добавить изображения карточек
     relArray = await addMiniCardsToTree(relArray)
     
-/*     const addMinicards = (arrPsns: IPersonCard[],
-      arrCards: { longname: string, minicard: string }[]): IPersonCard[] => {
-        
-      let arrPsnsWithCards: IPersonCard[] = []
-      
-      if (arrPsns.length > 0) {
-        arrPsnsWithCards = arrPsnsWithCards.concat(arrPsns)
-        for (let i = 0; i < arrPsns.length; i++) {
-          let indexPsnInArrCards = arrCards.findIndex((elem) => elem.longname === arrPsns[i].longname)
-          if (indexPsnInArrCards > -1) {
-            arrPsnsWithCards[i].minicard = arrCards[indexPsnInArrCards].minicard
-          }
-        }
-      }
-      return arrPsnsWithCards
-    }
-    
-    let filterPerson: string = cqlListOfPersonsFromArray(relArray)
-    
-    let arrMinicardsToAdd: { longname: string, minicard: string }[] = []
-
-    const getMinicards = (
-      result: { longname: string, minicard: string }[]): void => {
-      arrMinicardsToAdd = arrMinicardsToAdd.concat(result)
-    }
-
-    await  getIconsWithList(filterPerson, getMinicards)
-
-    relArray = addMinicards(relArray, arrMinicardsToAdd) */
-
     // выбрать и передать координаты бездетных супругов в уровнях 4 - 6
     let arrCouplesWithoutKids: IcouplesWithoutKids[] = [];
     arrCouplesWithoutKids = arrCouplesKidless(

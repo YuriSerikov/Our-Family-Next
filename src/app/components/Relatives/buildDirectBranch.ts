@@ -18,7 +18,7 @@ function buildDirectBranch(curPerson: string,
     pozY: 0,
     minicard: '',
     gender: 'Man',
-    lineColor: 'black',
+    lineColor: constRelTree.lineColor,
     dad: '',
     mother: ''  
 }
@@ -29,7 +29,7 @@ function buildDirectBranch(curPerson: string,
     pozY: 0,
     minicard: '',
     gender: 'Man',
-    lineColor: 'black',
+    lineColor: constRelTree.lineColor,
     dad: '',
     mother: ''  
 }
@@ -256,11 +256,6 @@ function buildDirectBranch(curPerson: string,
 
   relArray = relArray.concat(parentsInLaw);
 
-  /* let relIcons = {
-    arrIcons: relArray,
-    loading: true,
-  };
-  cbRelArray(relIcons); */
 
   // уровень "дедушки и бабушки". уровень 1
   let arrPersonsLevel1 = [];
@@ -341,12 +336,7 @@ function buildDirectBranch(curPerson: string,
     relArray = relArray.concat(arrPersonsLevel1);
   }
 
-  /* relIcons = {
-    arrIcons: relArray,
-    loading: true,
-  };
-  cbRelArray(relIcons); */
-
+  
   //Дети - 4-ый уровень
 
   relArray = putChildren(

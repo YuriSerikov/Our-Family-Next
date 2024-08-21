@@ -8,7 +8,6 @@ import {useRouter} from 'next/navigation';
 import Button from "react-bootstrap/Button";
 import { PersonContext } from "@/app/context/PersonContext";
 import { PersonsListContext } from "../context/PersonsListContext";
-//import getPersonsData from "@/app/API/Persons_CQL/Relations/getPersonsData";
 import Relatives4Person from '@/app/components/Relatives/Relatives4Person'
 import LoaderLissajous from "@/app/UI/loaderLissajous/LoaderLissajous";
 import Modal from "react-bootstrap/Modal";
@@ -52,7 +51,7 @@ export default function FamilyTree() {
     }
     setIsLoaded(true);
   };
-  // обЪект "Я"
+  // объект "Я"
   useEffect(() => {
     getPersonById(activePerson, passPersonData);
   }, [activePerson]);

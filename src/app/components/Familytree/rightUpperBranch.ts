@@ -16,7 +16,7 @@ const rightUpperBranch = (
   arrAllPersons: IPersonCard[],
   spouses: ISpouseType[],
   exspouses: IExspouseType[],
-  lineColor = "green"
+  lineColor = constRelTree.lineColorUp1  //"green"
 ) => {
   // пара родителей (второй родитель м.б. не известен) из 1-ого уровня
   // надо построить каскадно потомков: 2-ой, 3-й, 4-й и 5-й уровнь, правее всех уже размещенных

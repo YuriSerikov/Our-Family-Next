@@ -23,8 +23,10 @@ const BigFamilyTree = (props: { person: string; cbNewPerson: any }) => {
   const newActivePerson = (e: React.MouseEvent<HTMLImageElement>) => {
     e.preventDefault()
     const longname = e.currentTarget.id
-    setArrIcons([])
-    cbNewPerson(longname)
+    if (longname && longname !== person) {
+      setArrIcons([])
+      cbNewPerson(longname)
+    }
   }
 
   const cbRelArray = useCallback(
