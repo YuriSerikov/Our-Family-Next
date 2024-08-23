@@ -2,7 +2,7 @@ import { constRelTree } from '@/app/components/Relatives/constRelTree';
 import { IPersonCard } from "../../models/psnCardType";
 
 const insertExSpouseMain = (objPerson:IPersonCard, objExSpouse:IPersonCard, arrAllPsns:IPersonCard[]) => {
-  let j = -1;
+  let indexExSpouse = -1;
   const mgn = constRelTree.marginCard;
   const gridstepX = constRelTree.miniWidth + mgn;
   const level = objPerson.level;
@@ -21,19 +21,19 @@ const insertExSpouseMain = (objPerson:IPersonCard, objExSpouse:IPersonCard, arrA
     return arrAllPsns;
   }
 
-  j = arrAllPsns.findIndex((elem) => elem.longname === exspouseLongname);
-  if (j === -1) {
+  indexExSpouse = arrAllPsns.findIndex((elem) => elem.longname === exspouseLongname);
+  if (indexExSpouse === -1) {
     return arrAllPsns;
   }
 
-  arrAllPsns[j].level = level;
-  arrAllPsns[j].pozY = pozYlevel;
+  arrAllPsns[indexExSpouse].level = level;
+  arrAllPsns[indexExSpouse].pozY = pozYlevel;
 
   if (personGender === "Woman") {
     // вставить экс-мужа справа, т.е
     arrAllPsns.forEach((elem) => {
       elem.pozX =
-        elem.level >= level && elem.pozX > personPozX
+        elem.level >= level && elem.pozX > personPozX + constRelTree.miniWidth
           ? elem.pozX + gridstepX
           : elem.pozX;
     });
@@ -43,11 +43,11 @@ const insertExSpouseMain = (objPerson:IPersonCard, objExSpouse:IPersonCard, arrA
     arrAllPsns.forEach((elem) => {
       elem.pozX =
         elem.level >= level && elem.pozX >= personPozX
-          ? elem.pozX + gridstepX + mgn
+          ? elem.pozX + gridstepX+ mgn
           : elem.pozX;
     });
   }
-  arrAllPsns[j].pozX =
+  arrAllPsns[indexExSpouse].pozX =
     personGender === "Woman" ? personPozX + gridstepX : personPozX + mgn;
   return arrAllPsns;
 };
